@@ -1,0 +1,72 @@
+---
+import GalleryItem from "./GalleryItem.astro";
+
+const galleryItems = [
+  {
+    style: "haircuts creative",
+    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/9371e74ff3-bd3ce1c9df961f86cf0b.png",
+    alt: "Modern fade-klippning på manlig modell, professionellt barberarhantverk, skarpa linjer, svartvitt foto med gulddetaljer",
+    title: "Modern Fade",
+    description: "Precisionsklippning med kreativa linjer",
+  },
+  {
+    style: "beard",
+    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/ce87756280-b7bffece31ef6ebbfc6a.png",
+    alt: "Professionell skäggtrimning och styling, välvårdat helskägg på manlig modell, svartvitt foto med gulddetaljer",
+    title: "Skäggformning",
+    description: "Expertformning och skarpa konturer",
+  },
+  {
+    style: "haircuts",
+    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/61ff4c5ca6-6089878043944b5bea29.png",
+    alt: "Klassisk pompadour-frisyr på manlig modell, tidlös elegans, svartvitt foto med gulddetaljer",
+    title: "Klassisk Pompadour",
+    description: "Tidlös elegans med modern känsla",
+  },
+  {
+    style: "creative",
+    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/63f0878c42-687f09e4932c05391c6c.png",
+    alt: "Konstnärlig hårdesign med geometriska mönster, kreativ barbering, unika linjer, svartvitt foto med gulddetaljer",
+    title: "Kreativ Design",
+    description: "Skräddarsydda geometriska mönster",
+  },
+  {
+    style: "haircuts",
+    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/8450d091d1-95b1b70a92cc8cfd6a23.png",
+    alt: "Texturerad crop-frisyr på manlig modell, modern kort stil, professionellt barberarhantverk, svartvitt foto med gulddetaljer",
+    title: "Textured Crop",
+    description: "Modern stil med mycket textur",
+  },
+  {
+    style: "beard",
+    src: "https://storage.googleapis.com/uxpilot-auth.appspot.com/4c2ebb3079-24db694b9c6fd3580c07.png",
+    alt: "Mustaschstyling och grooming, precisionstrimning, vintage barberartekniker, svartvitt foto med gulddetaljer",
+    title: "Mustaschtrimning",
+    description: "Formning med vax och precision",
+  },
+];
+---
+
+<section id="portfolio-grid" class="bg-brand-dark py-20">
+  <div class="container mx-auto px-4">
+    <h3
+      class="font-montserrat relative mb-12 text-center text-2xl font-bold tracking-wider text-white uppercase"
+    >
+      Stilgalleri
+      <span class="bg-brand-gold mx-auto mt-4 block h-1 w-24"></span>
+    </h3>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        galleryItems.map((item) => (
+          <GalleryItem
+            style={item.style}
+            src={item.src}
+            alt={item.alt}
+            title={item.title}
+            description={item.description}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark-secondary: #1a1a1a;
+  --color-brand-dark: #0d0d0d;
+  --color-brand-gold: rgb(212 175 55);
+  --color-brand-light-gray: rgb(179 179 179);
+  --color-brand-dark-tertiary: rgb(20 20 20);
+  --font-montserrat: var(--font-montserrat);
+}

@@ -1,0 +1,49 @@
+---
+import ReviewItem from "./ReviewItem.astro";
+
+const reviews = [
+  {
+    clientName: "Erik Johansson",
+    clientAvatar:
+      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg",
+    reviewText:
+      "Känslan för detaljer är otrolig. Varje klippning blir precis som jag har tänkt mig.",
+  },
+  {
+    clientName: "David Nilsson",
+    clientAvatar:
+      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg",
+    reviewText:
+      "Bästa skäggtrimningen jag någonsin fått. Behandlingen med varma handdukar var fantastisk.",
+  },
+  {
+    clientName: "Oscar Berg",
+    clientAvatar:
+      "https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg",
+    reviewText:
+      "Rekommenderas starkt! Atmosfären är grym och servicen är verkligen förstklassig.",
+  },
+];
+---
+
+<section id="client-showcase" class="bg-brand-dark py-20">
+  <div class="container mx-auto px-4">
+    <h3
+      class="font-montserrat relative mb-12 text-center text-2xl font-bold tracking-wider text-white uppercase"
+    >
+      Vad Mina Kunder Säger
+      <span class="bg-brand-gold mx-auto mt-4 block h-1 w-24"></span>
+    </h3>
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {
+        reviews.map((review) => (
+          <ReviewItem
+            clientName={review.clientName}
+            clientAvatar={review.clientAvatar}
+            reviewText={review.reviewText}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,11 +1,25 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import About from "@components/About.astro";
+import BeforeAfter from "@components/BeforeAfter.astro";
+import Contact from "@components/Contact.astro";
+import CTA from "@components/CTA.astro";
+import Gallery from "@components/Gallery.astro";
+import Hero from "@components/Hero.astro";
+import Reviews from "@components/Reviews.astro";
+import Video from "@components/Video.astro";
+import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Premium Barberare Stockholm | Modern Herrklippning & Skägg | Kontakta Mig"
+  description="Upplev modernt hantverk hos din barberare i Stockholm. Vi erbjuder expertis inom herrklippning och skäggtrimning med fokus på stil och precision. Se vår portfolio."
+>
+  <Hero />
+  <About />
+  <CTA />
+  <Gallery />
+  <BeforeAfter />
+  <Reviews />
+  <Video />
+  <Contact />
 </Layout>

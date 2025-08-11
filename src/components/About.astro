@@ -1,0 +1,65 @@
+---
+import AboutImage from "@assets/about-image.webp";
+import { Image } from "astro:assets";
+---
+
+<section id="personal-story" class="bg-brand-dark py-20">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+      <div id="portrait-container" class="relative">
+        <div class="group relative overflow-hidden rounded-lg">
+          <Image
+            class="group-hover:shadow-brand-gold/20 h-[600px] w-full object-cover transition-all duration-500 group-hover:shadow-2xl"
+            src={AboutImage}
+            alt="professional barber portrait, black and white photography, confident pose, luxury barbershop background"
+            loading={"lazy"}
+          />
+          <div
+            class="border-brand-gold pointer-events-none absolute inset-0 rounded-lg border-2 opacity-80"
+          >
+          </div>
+        </div>
+      </div>
+      <div id="story-content" class="space-y-6">
+        <h3
+          class="font-montserrat relative mb-8 text-2xl font-bold tracking-wider text-white uppercase"
+          style="opacity: 1; transform: translateY(0px);"
+        >
+          Min Historia
+          <span class="bg-brand-gold mt-4 block h-1 w-24"></span>
+        </h3>
+        <p class="text-brand-light-gray leading-relaxed">
+          Under min uppväxt fascinerades jag av den förvandling som skedde i
+          kvarterets barbershop. Det handlade inte bara om att klippa hår – det
+          var en värld av självförtroende, gemenskap och äkta
+          hantverksskicklighet.
+        </p>
+        <p class="text-brand-light-gray leading-relaxed">
+          Efter min lärlingstid på välrenommerade salonger i New York och Los
+          Angeles har jag ägnat över åtta år åt att förfina konsten av modern
+          grooming, alltid med en djup respekt för traditionella tekniker.
+        </p>
+        <div
+          class="bg-brand-dark-tertiary border-brand-gold my-8 rounded-lg border-l-4 p-6"
+        >
+          <p
+            class="text-brand-gold font-montserrat text-lg font-semibold italic"
+          >
+            "Mitt mål är att förena din personlighet med en stil som stärker
+            dig."
+          </p>
+        </div>
+        <p class="font-semibold text-white">
+          Mina kärnvärden är precision, kreativitet och att bygga långsiktiga
+          kundrelationer. Varje bokning är en chans att inte bara förbättra ditt
+          utseende, utan också att förstå din livsstil och personliga stil.
+        </p>
+        <p class="text-brand-light-gray leading-relaxed">
+          Oavsett om du söker en tidlös, klassisk klippning eller vill testa
+          något djärvare, dedikerar jag samma noggrannhet och passion till varje
+          kund som sätter sig i min stol.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

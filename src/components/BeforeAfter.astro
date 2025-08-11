@@ -1,0 +1,100 @@
+---
+import BeforeAfterItem from "./BeforeAfterItem.astro";
+
+import SlideOneBefore from "@assets/slide-1-before.webp";
+import SlideOneAfter from "@assets/slide-1-after.webp";
+import SlideTwoBefore from "@assets/slide-2-before.webp";
+import SlideTwoAfter from "@assets/slide-2-after.webp";
+---
+
+<section id="before-after" class="bg-brand-dark-tertiary py-20">
+  <div class="container mx-auto px-4">
+    <h3
+      class="font-montserrat relative mb-12 text-center text-2xl font-bold tracking-wider text-white uppercase"
+    >
+      Före &amp; Efter
+      <span class="bg-brand-gold mx-auto mt-4 block h-1 w-24"></span>
+    </h3>
+    <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      <div
+        id="comparison-1"
+        class="bg-brand-dark-secondary relative overflow-hidden rounded-lg"
+      >
+        <BeforeAfterItem after={SlideOneAfter} before={SlideOneBefore} />
+        <div class="pointer-events-none p-6 select-none">
+          <h4 class="font-montserrat mb-2 text-lg font-semibold text-white">
+            Modern Förvandling
+          </h4>
+          <p class="text-brand-light-gray">
+            Från ovårdat till en perfekt stylad modern fade
+          </p>
+        </div>
+      </div>
+
+      <div
+        id="comparison-2"
+        class="bg-brand-dark-secondary relative overflow-hidden rounded-lg"
+      >
+        <BeforeAfterItem after={SlideTwoAfter} before={SlideTwoBefore} />
+        <div class="pointer-events-none p-6 select-none">
+          <h4 class="font-montserrat mb-2 text-lg font-semibold text-white">
+            Skägg-makeover
+          </h4>
+          <p class="text-brand-light-gray">
+            Expertis inom professionell formning och skulptering
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .svg-inline--fa {
+    display: inline-block;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+  }
+</style>
+
+<script is:inline>
+  document.querySelectorAll(".slider-container").forEach((container) => {
+    const sliderHandle = container.querySelector(".slider-handle");
+    const afterImage = container.querySelector(".before-image");
+
+    if (!sliderHandle || !afterImage) return;
+
+    let isDragging = false;
+
+    function updateSlider(xPos) {
+      const rect = container.getBoundingClientRect();
+      xPos = Math.max(0, Math.min(xPos, rect.width));
+      sliderHandle.style.left = `${xPos}px`;
+      afterImage.style.clip = `rect(0, ${xPos}px, ${rect.height}px, 0)`;
+    }
+
+    // Mouse
+    sliderHandle.addEventListener("mousedown", () => (isDragging = true));
+    document.addEventListener("mouseup", () => (isDragging = false));
+    document.addEventListener("mousemove", (e) => {
+      if (isDragging) {
+        updateSlider(e.clientX - container.getBoundingClientRect().left);
+      }
+    });
+
+    // Touch
+    sliderHandle.addEventListener("touchstart", () => (isDragging = true));
+    document.addEventListener("touchend", () => (isDragging = false));
+    document.addEventListener("touchmove", (e) => {
+      if (isDragging) {
+        updateSlider(
+          e.touches[0].clientX - container.getBoundingClientRect().left,
+        );
+      }
+    });
+
+    // Initial position
+    updateSlider(container.getBoundingClientRect().width / 2);
+  });
+</script>

@@ -1,0 +1,77 @@
+<section id="featured-video" class="bg-brand-dark-tertiary py-20">
+  <div class="container mx-auto px-4">
+    <h3
+      class="font-montserrat relative mb-12 text-center text-2xl font-bold tracking-wider text-white uppercase"
+    >
+      Bakom Kulisserna
+      <span class="bg-brand-gold mx-auto mt-4 block h-1 w-24"></span>
+    </h3>
+    <div class="mx-auto max-w-4xl">
+      <div
+        class="bg-brand-dark-secondary relative aspect-video overflow-hidden rounded-lg"
+      >
+        <lite-youtube videoid="fq8E7V6ILUs"></lite-youtube>
+        <div
+          class="custom-overlay pointer-events-none absolute inset-0 flex items-center justify-center bg-black/40"
+        >
+          <div
+            class="bg-brand-gold hover:text-brand-gold flex h-20 w-20 animate-pulse cursor-pointer items-center justify-center rounded-full transition-all duration-300 hover:bg-white"
+          >
+            <i class="text-brand-dark ml-1 text-2xl"
+              ><svg
+                class="text-brand-dark size-7"
+                aria-hidden="true"
+                focusable="false"
+                data-prefix="fas"
+                data-icon="play"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 384 512"
+                ><path
+                  fill="currentColor"
+                  d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"
+                ></path></svg
+              ></i
+            >
+          </div>
+        </div>
+      </div>
+      <div class="mt-6 text-center">
+        <h4 class="font-montserrat mb-2 text-xl font-semibold text-white">
+          Ett Hantverk i Rörelse
+        </h4>
+        <p class="text-brand-light-gray">
+          Se precision, klippteknik och styling i realtid.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  import "@justinribeiro/lite-youtube";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const video = document.querySelector("lite-youtube") as HTMLElement;
+    const overlay = document.querySelector(".custom-overlay") as HTMLElement;
+    let isPlaying = false;
+
+    video.addEventListener("click", () => {
+      if (isPlaying) {
+        overlay.style.display = "flex";
+      } else {
+        overlay.style.display = "none";
+      }
+      isPlaying = !isPlaying;
+      console.log(isPlaying);
+    });
+  });
+</script>
+<style is:global>
+  lite-youtube::part(playButton) {
+    display: none;
+  }
+
+  lite-youtube.lyt-activated + .custom-overlay {
+    display: none;
+  }
+</style>
