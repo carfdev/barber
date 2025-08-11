@@ -4,56 +4,101 @@
 >
   <div class="container mx-auto px-4 py-4">
     <div class="flex items-center justify-between">
-      <div class="flex items-center">
-        <h1
-          class="font-montserrat text-2xl font-bold tracking-wider text-white uppercase"
-        >
-          Barber<span class="text-brand-gold">Pro</span>
-        </h1>
-      </div>
+      <a
+        href="#hero"
+        class="font-montserrat text-2xl font-bold tracking-wider text-white uppercase"
+      >
+        Barber<span class="text-brand-gold">Pro</span>
+      </a>
+
       <nav class="hidden space-x-8 md:flex">
         <a
           href="#hero"
-          class="font-montserrat hover:text-brand-gold text-brand-light-gray cursor-pointer text-sm font-semibold tracking-wider uppercase transition duration-300"
-          >Home</a
+          class="hover:text-brand-gold text-brand-light-gray uppercase">Home</a
         >
         <a
           href="#personal-story"
-          class="font-montserrat text-brand-light-gray hover:text-brand-gold cursor-pointer text-sm font-semibold tracking-wider uppercase transition duration-300"
+          class="hover:text-brand-gold text-brand-light-gray uppercase"
           >Min historia</a
         >
         <a
           href="#portfolio-grid"
-          class="font-montserrat text-brand-light-gray hover:text-brand-gold cursor-pointer text-sm font-semibold tracking-wider uppercase transition duration-300"
+          class="hover:text-brand-gold text-brand-light-gray uppercase"
           >Galleri</a
         >
       </nav>
-      <div class="flex items-center space-x-4">
-        <a
-          href="#contact-main"
-          class="bg-brand-gold text-brand-dark font-montserrat hover:text-brand-gold hidden cursor-pointer rounded-lg px-6 py-2 text-sm font-semibold tracking-wider uppercase transition duration-300 hover:bg-white md:inline-block"
-          >Kontakta mig</a
+
+      <a
+        href="#contact-main"
+        class="bg-brand-gold text-brand-dark hidden rounded-lg px-6 py-2 uppercase md:inline-block"
+        >Kontakta mig</a
+      >
+
+      <button
+        class="cursor-pointer text-white md:hidden"
+        onclick="toggleMenu()"
+      >
+        <svg
+          class="fa-bars size-6"
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fas"
+          data-icon="bars"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+          data-fa-i2svg=""
+          ><path
+            fill="currentColor"
+            d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+          ></path></svg
         >
-        <button class="text-white md:hidden">
-          <i class="text-xl" data-fa-i2svg=""
-            ><svg
-              class="fa-bars size-6"
-              aria-hidden="true"
-              focusable="false"
-              data-prefix="fas"
-              data-icon="bars"
-              role="img"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 448 512"
-              data-fa-i2svg=""
-              ><path
-                fill="currentColor"
-                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
-              ></path></svg
-            ></i
-          >
-        </button>
-      </div>
+      </button>
+    </div>
+
+    <div
+      id="mobile-menu"
+      class="flex h-0 flex-col items-center space-y-4 overflow-hidden transition-all duration-300 ease-in-out md:hidden"
+    >
+      <a
+        href="#hero"
+        class="hover:text-brand-gold text-brand-light-gray uppercase">Home</a
+      >
+      <a
+        href="#personal-story"
+        class="hover:text-brand-gold text-brand-light-gray uppercase"
+        >Min historia</a
+      >
+      <a
+        href="#portfolio-grid"
+        class="hover:text-brand-gold text-brand-light-gray uppercase">Galleri</a
+      >
+      <a
+        href="#contact-main"
+        class="bg-brand-gold text-brand-dark rounded-lg px-4 py-2 uppercase"
+        >Kontakta mig</a
+      >
     </div>
   </div>
 </header>
+
+<script is:inline>
+  function toggleMenu() {
+    const nav = document.getElementById("mobile-menu");
+    nav.classList.toggle("h-0");
+    nav.classList.toggle("h-auto");
+    nav.classList.toggle("mt-6");
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const enlaces = document.querySelectorAll("#mobile-menu a");
+    enlaces.forEach((enlace) => {
+      enlace.addEventListener("click", () => {
+        const nav = document.getElementById("mobile-menu");
+        if (nav.classList.contains("h-auto")) {
+          toggleMenu();
+        }
+      });
+    });
+  });
+</script>
