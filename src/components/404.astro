@@ -1,0 +1,46 @@
+---
+import Background from "@assets/bg-blur-balls.svg";
+import { Image } from "astro:assets";
+---
+
+<section id="error-hero" class="relative flex h-[800px] items-center pt-20">
+  <div
+    class="from-brand-dark to-brand-dark-secondary absolute inset-0 z-0 bg-gradient-to-b"
+  >
+    <Image
+      class="h-full w-full object-cover opacity-20"
+      src={Background}
+      alt="Background with blurred balls"
+      loading="eager"
+    />
+  </div>
+  <div class="relative z-10 container mx-auto px-4">
+    <div class="mx-auto max-w-4xl text-center">
+      <div class="mb-8">
+        <div
+          class="font-montserrat text-brand-gold mb-4 text-8xl font-bold opacity-50 md:text-9xl"
+          style="opacity: 0.49;"
+        >
+          404
+        </div>
+        <div class="bg-brand-gold mx-auto mb-8 h-1 w-24"></div>
+      </div>
+      <h2
+        class="font-montserrat mb-6 text-3xl leading-tight font-bold tracking-wider text-white uppercase md:text-4xl lg:text-5xl"
+      >
+        Sidan Hittades Inte
+      </h2>
+      <p class="text-brand-light-gray mx-auto mb-8 max-w-2xl text-xl">
+        Hoppsan! Det ser ut som att den här sidan fick en dålig klippning och
+        försvann. Låt oss guida dig tillbaka till en vassare stil.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="/"
+          class="bg-brand-gold text-brand-dark font-montserrat hover:text-brand-gold cursor-pointer rounded-lg px-8 py-3 text-base font-semibold tracking-wider uppercase transition duration-300 hover:bg-white"
+          >Till Startsidan</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
