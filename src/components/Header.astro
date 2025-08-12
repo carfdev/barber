@@ -37,6 +37,13 @@
       <button
         class="cursor-pointer text-white md:hidden"
         onclick="toggleMenu()"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        id="mobile-menu-toggle"
+        type="button"
+        title="Toggle navigation"
+        aria-haspopup="true"
       >
         <svg
           class="fa-bars size-6"
@@ -88,6 +95,17 @@
     nav.classList.toggle("h-0");
     nav.classList.toggle("h-auto");
     nav.classList.toggle("mt-6");
+    const toggleButton = document.getElementById("mobile-menu-toggle");
+    const expanded = toggleButton.getAttribute("aria-expanded") === "true";
+    toggleButton.setAttribute("aria-expanded", !expanded);
+    toggleButton.setAttribute(
+      "aria-label",
+      expanded ? "Open navigation" : "Close navigation",
+    );
+    toggleButton.setAttribute(
+      "title",
+      expanded ? "Open navigation" : "Close navigation",
+    );
   }
 
   document.addEventListener("DOMContentLoaded", () => {
