@@ -33,7 +33,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (version 22 or higher, as specified in `Dockerfile`)
-- [npm](https://www.npmjs.com/) (or your preferred package manager like pnpm or yarn)
+- [pnpm](https://pnpm.io/) (or your preferred package manager like npm or yarn)
 
 ### Installation
 
