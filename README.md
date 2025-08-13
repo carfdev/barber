@@ -106,4 +106,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## ✍️ Author
 
-Created by **carfdev**.
+Created by [Carfdev](https://github.com/carfdev/).
