@@ -40,8 +40,8 @@ Follow these instructions to get a copy of the project up and running on your lo
 1.  **Clone the repository**:
 
     ```bash
-    git clone [https://github.com/your-username/carfdev-barber.git](https://github.com/your-username/carfdev-barber.git)
-    cd carfdev-barber
+    git clone https://github.com/carfdev/barber.git
+    cd barber
     ```
 
 2.  **Install dependencies**:
@@ -86,7 +86,7 @@ This project is configured for easy deployment with Docker.
     You must pass your production URL as a build argument. This ensures the sitemap is generated with the correct domain.
 
     ```bash
-    docker build --build-arg URL=[https://your-domain.com](https://your-domain.com) -t barber-pro-app .
+    docker build --build-arg URL=https://your-domain.com -t barber-pro-app .
     ```
 
 2.  **Run the Docker container**:
