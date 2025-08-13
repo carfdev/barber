@@ -47,7 +47,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 2.  **Install dependencies**:
 
     ```bash
-    npm install
+    pnpm install
     ```
 
 3.  **Set up environment variables**:
@@ -66,7 +66,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 4.  **Run the development server**:
     ```bash
-    npm run dev
+    pnpm dev
     ```
     The site will be available at `http://localhost:4321`.
 
